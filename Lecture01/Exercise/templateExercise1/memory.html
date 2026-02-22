@@ -5,17 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!--link rel="stylesheet" href="style.css">-->
+<style>
+.card {
+width: 200px;
+height: 200px;
+background-color: turquoise;
+border: 2px solid black;
+margin: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 50px;
+cursor: pointer;
+}
+</style>  
+    
 </head>
 <body>
     <div class="container">
         <h1 class="text-center my-4">Memory Game</h1>
         <div id="game-board" class="row justify-content-center">
-            <!-- Card elements will go here -->
+          <div class="card" onclick="flipCard(this, '1')">?</div>
+            <div class="card" onclick="flipCard(this, '1')">?</div>
+             <div class="card" onclick="flipCard(this, '2')">?</div>
+             <div class="card" onclick="flipCard(this, '2')">?</div>
+             <div class="card" onclick="flipCard(this, '3')">?</div>
+             <div class="card" onclick="flipCard(this, '3')">?</div>
         </div>
     </div>
     <script>
-        // Place script code here
+        let firstCard = null;
+        let secondCard = null;
+        
+        function flipCard(card, number) 
+            {
+            card.liste = number;
+            
+                if (irstCard==null) {
+            firstCard = card;
+            } else {
+            secondCard = card;
+match();
+}
+}
+
+function match() {
+if (firstCard.liste === secondCard.liste)
+{
+firstCard = null;
+secondCard = null;
+} else {
+firstCard.liste = "?";
+secondCard.liste = "?";
+firstCard = null;
+secondCard = null;
+}
+}
+</script>
+   
     </script>
 </body>
 </html>
